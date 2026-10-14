@@ -10,53 +10,57 @@ Project Flutter ini merupakan starter project untuk sisi frontend/mobile applica
 
 ## 2. Architecture
 
-Flutter menggunakan struktur aplikasi berlapis dengan pemisahan antara:
+Project Flutter menggunakan pendekatan MVVM dengan pemisahan tanggung jawab ke dalam empat layer utama:
 
-- `core` – konfigurasi dan utilitas umum aplikasi.
-- `models` – representasi data aplikasi.
-- `services` – komunikasi dengan backend/API.
-- `screens` – halaman atau tampilan aplikasi.
-- `widgets` – komponen UI yang dapat digunakan kembali.
-- `routes` – pengaturan navigasi aplikasi.
+- `app` – konfigurasi aplikasi, konstanta, tema, dan routing.
+- `data` – model data dan service untuk komunikasi dengan backend.
+- `presentation` – tampilan aplikasi, screen, dan reusable widget.
+- `utils` – fungsi utilitas umum yang digunakan oleh aplikasi.
 
-Alur umum:
+Alur data aplikasi:
 
 ```text
 User
   |
   v
-Screen / View
+Presentation
   |
   v
-Service
+ViewModel / Service
   |
   v
 Laravel REST API
   |
   v
+Database
+  |
+  v
 JSON Response
   |
   v
-Model
+Data Model
   |
   v
-Screen / Widget
+Presentation
 
 ## 3. Struktur Folder Utama
 
 ```text
 lib/
-├── core/
+├── app/
 │   ├── constants/
-│   ├── theme/
-│   └── utils/
-├── models/
-├── routes/
-├── screens/
-│   ├── application/
-│   ├── home/
-│   ├── review/
-│   ├── rusunawa/
-│   └── unit/
-├── services/
-└── widgets/
+│   ├── routes/
+│   └── theme/
+├── data/
+│   ├── models/
+│   └── services/
+├── presentation/
+│   ├── screens/
+│   │   ├── application/
+│   │   ├── home/
+│   │   ├── review/
+│   │   ├── rusunawa/
+│   │   └── unit/
+│   └── widgets/
+├── utils/
+└── main.dart
