@@ -11,8 +11,10 @@ class AppColors {
   static const Color primary700 = Color(0xFF1D4ED8);
   static const Color primary900 = Color(0xFF1E3A8A);
 
-  // Semantic colors
+  
+// Semantic colors
   static const Color success500 = Color(0xFF16A34A);
+  static const Color success100 = Color(0xFFDCFCE7);
   static const Color warning500 = Color(0xFFF59E0B);
   static const Color error500 = Color(0xFFDC2626);
   static const Color info500 = Color(0xFF2563EB);
